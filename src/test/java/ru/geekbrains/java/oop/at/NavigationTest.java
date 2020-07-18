@@ -35,6 +35,8 @@ public class NavigationTest extends BaseTest {
         Assertions.assertEquals("Форум",
                 chromeDriver.findElement(By.cssSelector("[id=\"top-menu\"] [class=\"gb-header__title\"]")).getText()
         );
+        chromeDriver.findElement(By.cssSelector("[class=\"gb-header__content gb-top-menu__content_flexbox\"]"));
+        chromeDriver.findElement(By.cssSelector("[class=\"site-footer__content\"]"));
     }
 
     @Test
@@ -44,6 +46,8 @@ public class NavigationTest extends BaseTest {
         Assertions.assertEquals("Вебинары",
                 chromeDriver.findElement(By.cssSelector("[id=\"top-menu\"] [class=\"gb-header__title\"]")).getText()
         );
+        chromeDriver.findElement(By.cssSelector("[class=\"gb-header__content gb-top-menu__content_flexbox\"]"));
+        chromeDriver.findElement(By.cssSelector("[class=\"site-footer__content\"]"));
     }
 
     @Test
@@ -53,20 +57,25 @@ public class NavigationTest extends BaseTest {
         Assertions.assertEquals("Блог",
                 chromeDriver.findElement(By.cssSelector("[id=\"top-menu\"] [class=\"gb-header__title\"]")).getText()
         );
+        chromeDriver.findElement(By.cssSelector("[class=\"gb-header__content gb-top-menu__content_application\"]"));
+        chromeDriver.findElement(By.cssSelector("[class=\"site-footer__content\"]"));
     }
 
     @Test
     public void tests(){
 
 
-        chromeDriver.findElement(By.cssSelector("[class=\"gb-empopup-close\"]")).click();
-        chromeDriver.findElement(By.cssSelector("button [class=\"svg-icon icon-popup-close-button \"]")).click();
+//        chromeDriver.findElement(By.cssSelector("[class=\"gb-empopup-close\"]")).click();
+//        chromeDriver.findElement(By.cssSelector("button [class=\"svg-icon icon-popup-close-button \"]")).click();
 
         chromeDriver.findElement(By.cssSelector("[id=\"nav\"] [href=\"/tests\"]")).click();
 
         Assertions.assertEquals("Тесты",
                 chromeDriver.findElement(By.cssSelector("[id=\"top-menu\"] [class=\"gb-header__title\"]")).getText()
         );
+
+        chromeDriver.findElement(By.cssSelector("[class=\"gb-header__content gb-top-menu__content_flexbox\"]"));
+        chromeDriver.findElement(By.cssSelector("[class=\"site-footer__content\"]"));
     }
 
     @Test
@@ -76,6 +85,8 @@ public class NavigationTest extends BaseTest {
         Assertions.assertEquals("Карьера",
                 chromeDriver.findElement(By.cssSelector("[id=\"top-menu\"] [class=\"gb-header__title\"]")).getText()
         );
+        chromeDriver.findElement(By.cssSelector("[class=\"gb-header__content gb-top-menu__content_flexbox\"]"));
+        chromeDriver.findElement(By.cssSelector("[class=\"site-footer__content\"]"));
     }
 
     @Test
@@ -85,6 +96,8 @@ public class NavigationTest extends BaseTest {
         Assertions.assertEquals("Курсы",
                 chromeDriver.findElement(By.cssSelector("[id=\"top-menu\"] [class=\"gb-header__title\"]")).getText()
         );
+        chromeDriver.findElement(By.cssSelector("[class=\"gb-header__content gb-top-menu__content_application\"]"));
+        chromeDriver.findElement(By.cssSelector("[class=\"site-footer__content\"]"));
     }
 
 
