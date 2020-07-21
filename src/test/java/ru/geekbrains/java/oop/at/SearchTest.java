@@ -53,38 +53,30 @@ public class SearchTest extends BaseTest {
 
         WebElement professionsCount = chromeDriver.findElement(By.xpath("//a[@class='search-page-block__more' and @data-tab='professions']/span"));
         wait15seconds.until((ExpectedConditions.textToBePresentInElement(professions, "Профессии")));
-        Assertions.assertTrue((Integer.parseInt(professionsCount.getText())) >= 2, "Количество найденных профессий менее 2!");
+        Assertions.assertTrue(Integer.parseInt(professionsCount.getText()) >= 2, "Количество найденных профессий менее 2!");
+
         WebElement coursesCount = chromeDriver.findElement(By.xpath("//a[@class=\"search-page-block__more\" and @data-tab=\"courses\"]/span"));
         wait15seconds.until((ExpectedConditions.textToBePresentInElement(courses, "Курсы")));
+        Assertions.assertTrue(Integer.parseInt(coursesCount.getText()) > 15, "Количество найденных курсов больше 15");
 
         WebElement eventsCount = chromeDriver.findElement(By.xpath("//a[@class=\"search-page-block__more\" and @data-tab=\"webinars\"]/span"));
         wait15seconds.until((ExpectedConditions.textToBePresentInElement(events, "Вебинары")));
+        Assertions.assertTrue(((Integer.parseInt(eventsCount.getText()) > 180) & (Integer.parseInt(eventsCount.getText()) < 300)), "Количество вебинаров в диапазоне от 180 до 300");
 
         WebElement postsCount = chromeDriver.findElement(By.xpath("//a[@class=\"search-page-block__more\" and @data-tab=\"blogs\"]/span"));
         wait15seconds.until((ExpectedConditions.textToBePresentInElement(posts, "Блоги")));
+        Assertions.assertTrue((Integer.parseInt(postsCount.getText())) > 300, "Блогов более 300");
 
         WebElement forumsCount = chromeDriver.findElement(By.xpath("//a[@class=\"search-page-block__more\" and @data-tab=\"forums\"]/span"));
         wait15seconds.until((ExpectedConditions.textToBePresentInElement(forums, "Форум")));
+        Assertions.assertTrue((Integer.parseInt(forumsCount.getText())) != 350, "Количество форумов не равно 350");
 
         WebElement testsCount = chromeDriver.findElement(By.xpath("//a[@class=\"search-page-block__more\" and @data-tab=\"tests\"]/span"));
         wait15seconds.until((ExpectedConditions.textToBePresentInElement(tests, "Тесты")));
+        Assertions.assertTrue((Integer.parseInt(testsCount.getText())) != 0, "Количество тестов не равно 0");
 
         WebElement gBCompany = chromeDriver.findElement(By.xpath("//a[@href=\"/career/682\" and text() = \"Образовательный портал GeekBrains\"]"));
         wait15seconds.until((ExpectedConditions.textToBePresentInElement(projectAndCompany, "Проекты и компании")));
-
-
-
-
-        Assertions.assertTrue(Integer.parseInt(coursesCount.getText()) > 15, "Количество найденных курсов больще 15");
-
-        Assertions.assertTrue(((Integer.parseInt(eventsCount.getText()) > 180) & (Integer.parseInt(eventsCount.getText()) < 300)), "Количество вебинаров в диапазоне от 180 до 300");
-
-        Assertions.assertTrue((Integer.parseInt(postsCount.getText())) > 300, "Блогов более 300");
-
-        Assertions.assertTrue((Integer.parseInt(forumsCount.getText())) != 350, "Количество форумов не равно 350");
-
-        Assertions.assertTrue((Integer.parseInt(testsCount.getText())) != 0, "Количество тестов не равно 0");
-
         Assertions.assertNotNull(gBCompany, "В Проектах и компаниях отображается GeekBrains");
 
         Assertions.assertEquals(jJunior.getText(),"Java Junior. Что нужно знать для успешного собеседования?");
