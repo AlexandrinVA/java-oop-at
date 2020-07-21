@@ -54,6 +54,10 @@ public class NavigationTest extends BaseTest {
     public void posts(){
 
         chromeDriver.findElement(By.cssSelector("[id=\"nav\"] [href=\"/posts\"]")).click();
+
+        chromeDriver.findElement(By.cssSelector("[class=\"gb-empopup-close\"]")).click();
+        chromeDriver.findElement(By.cssSelector("button [class=\"svg-icon icon-popup-close-button \"]")).click();
+
         Assertions.assertEquals("Блог",
                 chromeDriver.findElement(By.cssSelector("[id=\"top-menu\"] [class=\"gb-header__title\"]")).getText()
         );

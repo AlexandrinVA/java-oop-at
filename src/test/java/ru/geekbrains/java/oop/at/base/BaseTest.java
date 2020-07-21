@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
@@ -13,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class BaseTest {
 
     public ChromeDriver chromeDriver;
+    public WebDriverWait wait15seconds;
 
     @BeforeEach
     public void beforeEach()  {
@@ -28,6 +30,8 @@ public abstract class BaseTest {
         chromeDriver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
         chromeDriver.manage().window().maximize();
         chromeDriver.get("https://geekbrains.ru/events");
+
+        wait15seconds = new WebDriverWait(chromeDriver, 15);
 
 
     }
