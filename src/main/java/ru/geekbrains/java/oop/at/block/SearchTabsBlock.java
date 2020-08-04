@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import ru.geekbrains.java.oop.at.BasePageObject;
-
+import ru.geekbrains.java.oop.at.ButtonNotFoundException;
 
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -76,7 +76,7 @@ public class SearchTabsBlock extends BasePageObject {
             case COMPANIES:
                 return tabCompanies;
             default:
-                throw new IllegalStateException("Unexpected value: " + tab);
+                throw new ButtonNotFoundException("Unexpected value: " + tab);
 
         }
     }

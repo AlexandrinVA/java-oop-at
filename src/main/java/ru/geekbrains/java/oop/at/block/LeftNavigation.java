@@ -44,7 +44,7 @@ public class LeftNavigation extends BasePageObject {
         PageFactory.initElements(driver, this);
     }
 
-    @Step("Нажатие кнопки {nameButton}")
+    @Step("Нажатие кнопки {button}")
     public ContentBasePage clickButton(Button button){
         ContentBasePage contentBasePage = null;
 
@@ -83,6 +83,16 @@ public class LeftNavigation extends BasePageObject {
         }
         return contentBasePage;
     }
+
+
+//    Enum —  класс. Список который имеет ограниченный, неизменяемый набор значений
+//    Но он специально «заточен» на решение задач:
+//      создание некоторого ограниченного круга значений.
+
+//    В нашем случае позволяет определив в одном месте, использовать этот список везде в проекте.
+//    И не дать возможность пользователю допустить ошибку с названием кнопки
+
+
     public enum Button {
         ICON("Главная"),
         COURSES("Курсы"),

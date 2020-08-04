@@ -66,9 +66,9 @@ public class HeaderBlock extends BasePageObject {
     }
 
     @Step("Поиск на сайте по тексту: {exampleNamePage}")
-    public SearchPage searchText(String text){
+    public SearchPage searchText(String exampleNamePage){
         buttonSearch.click();
-        inputSearch.sendKeys(text);
+        inputSearch.sendKeys(exampleNamePage);
         return new SearchPage(driver);
     }
 }
